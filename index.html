@@ -13,6 +13,14 @@
       referrerpolicy="no-referrer"
     />
 
+    <!-- GOOGLE FONT  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+
     <!-- FILE STYLE -->
     <link rel="stylesheet" href="./css/style.css" />
 
@@ -22,10 +30,12 @@
   </head>
   <body>
     <main class="debug">
-      <div class="sidebar">sidebar</div>
+      <div class="sidebar-open">sidebar</div>
+      <div class="sidebar-close">sidebar</div>
 
       <div class="main-container">
         <header></header>
+
         <div class="main-box"></div>
       </div>
     </main>
@@ -33,7 +43,7 @@
     <footer class="" id="footer">
       <!-- left -->
       <div class="box">
-        <div class="box">
+        <div class="box" id="left">
           <div class="box-img">
             <img src="./img/sinister.jpeg" alt="sinister" />
           </div>
@@ -45,42 +55,42 @@
 
         <ul class="flex">
           <li>
-            <i class="fa-regular fa-heart fa-sm" style="color: #b0b0b0"></i>
+            <i class="fa-regular fa-heart fa-xm" style="color: #b0b0b0"></i>
           </li>
           <li>
-            <i class="fa-regular fa-folder fa-sm" style="color: #b0b0b0"></i>
+            <i class="fa-regular fa-folder fa-xm" style="color: #b0b0b0"></i>
           </li>
         </ul>
       </div>
 
       <!-- center -->
-      <div class="box">
+      <div class="box" id="center">
         <div class="box">
           <ul class="flex">
             <li>
-              <i class="fa-solid fa-shuffle fa-sm" style="color: #ffffff"></i>
+              <i class="fa-solid fa-shuffle fa-xl" style="color: #ffffff"></i>
             </li>
             <li>
               <i
-                class="fa-solid fa-backward-step fa-sm"
+                class="fa-solid fa-backward-step fa-xl"
                 style="color: #ffffff"
               ></i>
             </li>
             <li>
               <i
-                class="fa-regular fa-circle-play fa-xl"
+                class="fa-regular fa-circle-play fa-2xl"
                 style="color: #ffffff"
               ></i>
             </li>
             <li>
               <i
-                class="fa-solid fa-forward-step fa-sm"
+                class="fa-solid fa-forward-step fa-xl"
                 style="color: #ffffff"
               ></i>
             </li>
             <li>
               <i
-                class="fa-solid fa-rotate-left fa-flip-horizontal fa-sm"
+                class="fa-solid fa-rotate-left fa-flip-horizontal fa-xl"
                 style="color: #ffffff"
               ></i>
             </li>
@@ -88,9 +98,9 @@
         </div>
         <div class="box">
           <span>0:25</span>
-          <span class="bars">
+          <div class="bars">
             <span id="percentuale"></span>
-          </span>
+          </div>
           <span>4:35</span>
         </div>
       </div>
@@ -99,7 +109,7 @@
       <div class="box">
         <ul class="flex">
           <li>
-            <i class="fa-solid fa-list-ul fa-sm" style="color: #ffffff"></i>
+            <i class="fa-solid fa-list-ul fa-xm" style="color: #ffffff"></i>
           </li>
           <li>
             <i class="fa-solid fa-desktop fa-xm" style="color: #ffffff"></i>

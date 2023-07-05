@@ -7,7 +7,12 @@
   margin: 0;
   padding: 0;
 }
-
+body{
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 600;
+	color:var(--color-primary;)
+	scroll-behavior: smooth;
+}
 main {
   display: flex;
   height: calc(100vh - 150px);
@@ -29,6 +34,26 @@ header + * {
   display: flex;
   align-items: center;
 }
+
+.text-primary{
+	color: var(--color-primary);
+}
+
+.text-secondary{
+	color: var(--color-secondary);
+}
+
+/*********************/
+/*#      	ROOT	     */
+/*********************/
+:root{
+	--color-primary:#f6f6f6;
+	--color-secondary:#696969;
+	--space-big:20px;
+	--space-small:5px;
+}
+
+
 /*********************/
 /*#      SECTION     */
 /*********************/
@@ -36,9 +61,15 @@ header + * {
 /* *LAYER */
 /* ?    SIDEBAR       */
 
-.sidebar {
+.sidebar-open {
   width: 300px;
   background-color: #000000;
+}
+
+.sidebar-close {
+  width: 50px;
+  background-color: #000000;
+	display: none;
 }
 
 /* ?    MAIN-CONTAINER       */
@@ -60,12 +91,13 @@ header + * {
 /* ?    HEADER     */
 
 header {
-  width: calc(100% - 316px);
+  width: calc(100% - 300px);
   height: 100px;
   background-color: rgba(0, 0, 0, 0.4);
 
   position: fixed;
-  right: 16px;
+	left: 300px;
+	right: 0;
   top: 0;
   z-index: 2;
 }
@@ -93,11 +125,12 @@ footer#footer > .box:nth-child(2) {
   color: white;
   list-style: none;
   white-space: nowrap;
-  margin: 0 5px;
+  margin: 0 var(--space-small);
 }
 
 #footer .box-img {
   max-width: 100px;
+	min-width: 60px;
 }
 
 #footer img {
@@ -105,16 +138,19 @@ footer#footer > .box:nth-child(2) {
 }
 
 /* *center */
-
+#center li {
+	padding: 0 var(--space-big);
+}
 #footer span {
   color: white;
 }
 .bars {
-  width: 400px;
+	min-width: 80px;
+  width: 40vw;
   height: 6px;
   background-color: rgba(212, 212, 212, 0.445);
   border-radius: 100px;
-  margin: 0 20px;
+  margin: 0 var(--space-big);
 }
 
 #percentuale {
@@ -171,9 +207,32 @@ footer.debug {
 /***************************/
 /*#       MEDIA QUERY      */
 /***************************/
+@media screen and (max-width: 1200px) {
+	li.bars {
+		display: none;
+	}
+#footer .box{
+	margin-right: 0px;
+}
+#footer li{
+	padding: 0 var(--space-small);
+}
 
-@media screen and (max-width: 768px) {
-  .box > .bars {
-    max-width: 200px;
-  }
+}
+
+
+@media screen and (max-width: 576px) {
+	.main-container{
+		width: calc(100% - 50px);
+	}
+	.sidebar-open{
+		display: none;
+	}
+	.sidebar-close{
+		display: block;
+	}
+	header{
+		left: 50px;
+	}
+
 }
