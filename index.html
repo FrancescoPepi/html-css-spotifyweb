@@ -4,12 +4,24 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <!-- font awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
     <!-- FILE STYLE -->
     <link rel="stylesheet" href="./css/style.css" />
+
+    <!-- FAVICON -->
+    <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon" />
     <title>Spotify</title>
   </head>
-  <body class="debug">
-    <main>
+  <body>
+    <main class="debug">
       <div class="sidebar">sidebar</div>
 
       <div class="main-container">
@@ -18,10 +30,88 @@
       </div>
     </main>
 
-    <footer class="debug" id="footer">
-      <div class="main-box"></div>
-      <div class="main-box"></div>
-      <div class="main-box"></div>
+    <footer class="" id="footer">
+      <!-- left -->
+      <div class="box">
+        <div class="box">
+          <div class="box-img">
+            <img src="./img/sinister.jpeg" alt="sinister" />
+          </div>
+          <ul>
+            <li>Sister</li>
+            <li>Brano Nome</li>
+          </ul>
+        </div>
+
+        <ul class="flex">
+          <li>
+            <i class="fa-regular fa-heart fa-sm" style="color: #b0b0b0"></i>
+          </li>
+          <li>
+            <i class="fa-regular fa-folder fa-sm" style="color: #b0b0b0"></i>
+          </li>
+        </ul>
+      </div>
+
+      <!-- center -->
+      <div class="box">
+        <div class="box">
+          <ul class="flex">
+            <li>
+              <i class="fa-solid fa-shuffle fa-sm" style="color: #ffffff"></i>
+            </li>
+            <li>
+              <i
+                class="fa-solid fa-backward-step fa-sm"
+                style="color: #ffffff"
+              ></i>
+            </li>
+            <li>
+              <i
+                class="fa-regular fa-circle-play fa-xl"
+                style="color: #ffffff"
+              ></i>
+            </li>
+            <li>
+              <i
+                class="fa-solid fa-forward-step fa-sm"
+                style="color: #ffffff"
+              ></i>
+            </li>
+            <li>
+              <i
+                class="fa-solid fa-rotate-left fa-flip-horizontal fa-sm"
+                style="color: #ffffff"
+              ></i>
+            </li>
+          </ul>
+        </div>
+        <div class="box">
+          <span>0:25</span>
+          <span class="bars">
+            <span id="percentuale"></span>
+          </span>
+          <span>4:35</span>
+        </div>
+      </div>
+
+      <!-- right -->
+      <div class="box">
+        <ul class="flex">
+          <li>
+            <i class="fa-solid fa-list-ul fa-sm" style="color: #ffffff"></i>
+          </li>
+          <li>
+            <i class="fa-solid fa-desktop fa-xm" style="color: #ffffff"></i>
+          </li>
+          <li>
+            <i class="fa-solid fa-volume-high fa-xm" style="color: #ffffff"></i>
+          </li>
+          <li class="bars">
+            <span id="percentuale"></span>
+          </li>
+        </ul>
+      </div>
     </footer>
   </body>
 </html>
