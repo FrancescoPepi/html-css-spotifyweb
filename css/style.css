@@ -1,0 +1,99 @@
+/*********************/
+/*#      GENERIC     */
+/*********************/
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  display: flex;
+}
+
+header + * {
+  margin-top: 100px;
+}
+
+/*********************/
+/*#      UTILITY     */
+/*********************/
+
+/*********************/
+/*#      SECTION     */
+/*********************/
+
+/* *LAYER */
+/* ?    SIDEBAR       */
+
+.sidebar {
+  width: 300px;
+  height: calc(100vh - 100px);
+}
+
+/* ?    MAIN-CONTAINER       */
+
+.main-container {
+  width: calc(100vw - 300px);
+  padding: 10px;
+}
+
+/* ?    MAIN-BOX     */
+
+.main-box {
+  overflow: auto;
+}
+
+/* ?    HEADER     */
+
+header {
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 2;
+  width: calc(100vw - 300px);
+  height: 100px;
+}
+
+/* ?    FOOTER       */
+footer {
+  width: 100vw;
+  height: 100px;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+}
+/* *FINE LAYER */
+
+/*********************/
+/*#       DEBUG      */
+/*********************/
+
+.debug * {
+  /* border: 1px dashed black; */
+}
+
+.debug .main-container {
+  /* padding: 10px; */
+  background-color: #dae8fc;
+}
+
+.debug header {
+  padding: 10px;
+  background-color: #fce9da;
+}
+
+.debug .main-box {
+  padding: 10px;
+  background-color: #daddfc;
+}
+
+.debug .sidebar {
+  /* padding: 10px; */
+  background-color: #fff2cc;
+}
+footer.debug {
+  /* padding: 10px; */
+  background-color: #d5e8d4;
+}
