@@ -32,10 +32,13 @@ li:nth-child(2) {
   padding: var(--space-margin);
 }
 .row {
+  display: flex;
   margin-left: -var(--space-margin);
   margin-right: -var(--space-margin);
 }
 .col {
+  width: calc(100% / 6);
+  aspect-ratio: 1/1;
   padding: var(--space-margin);
 }
 /*
@@ -276,6 +279,7 @@ li:nth-child(2) {
 
 .debug * {
   border: 1px dashed rgb(255, 0, 0);
+  padding: 10px;
 }
 
 /*
@@ -287,6 +291,14 @@ li:nth-child(2) {
 /* !    TABLET      */
 
 @media screen and (max-width: 768px) {
+  .row {
+    flex-wrap: wrap;
+  }
+
+  .col {
+    width: calc(100% / 4);
+    aspect-ratio: 1/1;
+  }
 }
 
 /* !    FOOTER       */
