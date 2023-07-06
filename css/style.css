@@ -167,11 +167,16 @@ li:nth-child(2) {
   transform: translate(0, 3px);
 }
 
+#sidebar #profilo .icon-text {
+  color: var(--color-text-primary);
+}
+
 /* ?    MAIN-CONTENT       */
 #main-content {
   width: calc(100% - var(--width-sidebar));
   overflow-y: auto;
 }
+
 /* ?    HEADER     */
 #header {
   position: sticky;
@@ -179,6 +184,18 @@ li:nth-child(2) {
   top: 0;
   height: var(--height-header);
   background-color: var(--color-bg-header);
+}
+
+.up-grade {
+  position: absolute;
+  right: 10px;
+  top: calc(100% / 2);
+  transform: translate(0, -50%);
+  padding: 10px 30px;
+  max-width: 300px;
+  border: 1px solid var(--color-text-primary);
+  border-radius: 50px;
+  text-align: center;
 }
 /* ?    ALBUM     */
 #album {
@@ -190,7 +207,6 @@ li:nth-child(2) {
 }
 #player .container {
   height: 100%;
-  /* width: calc(100% / 3); */
   display: flex;
   align-items: center;
   flex-grow: 2;
