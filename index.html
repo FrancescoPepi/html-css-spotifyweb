@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- font awesome -->
+    <!-- LINK FOONT AWESOME -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -13,7 +13,7 @@
       referrerpolicy="no-referrer"
     />
 
-    <!-- GOOGLE FONT  -->
+    <!-- LINK GOOGLE FOONTS -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -21,106 +21,82 @@
       rel="stylesheet"
     />
 
-    <!-- FILE STYLE -->
-    <link rel="stylesheet" href="./css/style.css" />
+    <!-- STYLE CSS -->
+    <link rel="stylesheet" href="./css/style2.css" />
 
     <!-- FAVICON -->
     <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon" />
+
     <title>Spotify</title>
   </head>
   <body>
-    <main class="debug">
-      <div class="sidebar-open">sidebar</div>
-      <div class="sidebar-close">sidebar</div>
+    <!-- MAIN CONTAINER - -->
+    <div id="wrapper" class="">
+      <!-- SIDEBAR - PLAYLIST -  -->
+      <div id="sidebar"></div>
 
-      <div class="main-container">
-        <header></header>
-
-        <div class="main-box"></div>
+      <!-- HEADER + ALBUM -->
+      <div id="main-content">
+        <!-- HEADER -->
+        <header id="header"></header>
+        <main id="album"></main>
       </div>
-    </main>
+    </div>
 
-    <footer class="" id="footer">
-      <!-- left -->
-      <div class="box">
-        <div class="box" id="left">
-          <div class="box-img">
-            <img src="./img/sinister.jpeg" alt="sinister" />
-          </div>
-          <ul>
-            <li>Sister</li>
-            <li>Brano Nome</li>
-          </ul>
+    <!-- FOOTER - PLAYER BAR - -->
+    <footer id="player" class="">
+      <!-- # SINISTRA - INFO PLAYER - -->
+      <div class="container" id="info-player">
+        <div class="box-img">
+          <img src="./img/sinister.jpeg" alt="sinister" />
         </div>
 
-        <ul class="flex">
-          <li>
-            <i class="fa-regular fa-heart fa-xm" style="color: #b0b0b0"></i>
-          </li>
-          <li>
-            <i class="fa-regular fa-folder fa-xm" style="color: #b0b0b0"></i>
-          </li>
+        <ul>
+          <li>Sister</li>
+          <li>Brano Nome</li>
         </ul>
+        <div>
+          <i class="fa-regular fa-heart fa-xm" style="color: #b0b0b0"></i>
+          <i class="fa-regular fa-folder fa-xm" style="color: #b0b0b0"></i>
+        </div>
       </div>
 
-      <!-- center -->
-      <div class="box" id="center">
-        <div class="box">
-          <ul class="flex">
-            <li>
-              <i class="fa-solid fa-shuffle fa-xl" style="color: #ffffff"></i>
-            </li>
-            <li>
-              <i
-                class="fa-solid fa-backward-step fa-xl"
-                style="color: #ffffff"
-              ></i>
-            </li>
-            <li>
-              <i
-                class="fa-regular fa-circle-play fa-2xl"
-                style="color: #ffffff"
-              ></i>
-            </li>
-            <li>
-              <i
-                class="fa-solid fa-forward-step fa-xl"
-                style="color: #ffffff"
-              ></i>
-            </li>
-            <li>
-              <i
-                class="fa-solid fa-rotate-left fa-flip-horizontal fa-xl"
-                style="color: #ffffff"
-              ></i>
-            </li>
-          </ul>
+      <!-- # CENTERO - CONTROLLI PLAYER - BAR PLAYER - -->
+      <div class="container">
+        <!-- - CONTROLLI PLAYER - -->
+        <div class="contoller-player">
+          <i class="fa-solid fa-shuffle" style="color: #ffffff"></i>
+          <i class="fa-solid fa-backward-step" style="color: #ffffff"></i>
+          <i class="fa-regular fa-circle-play fa-2x" style="color: #ffffff"></i>
+          <i class="fa-solid fa-forward-step" style="color: #ffffff"></i>
+          <i
+            class="fa-solid fa-rotate-left fa-flip-horizontal"
+            style="color: #ffffff"
+          ></i>
         </div>
-        <div class="box">
+
+        <!-- - BAR PLAYER - -->
+        <div class="contoller-player">
           <span>0:25</span>
-          <div class="bars">
-            <span id="percentuale"></span>
+          <div class="bar-container">
+            <span class="bar-size">
+              <span class="bar-progress"></span>
+            </span>
           </div>
           <span>4:35</span>
         </div>
       </div>
 
-      <!-- right -->
-      <div class="box">
-        <ul class="flex">
-          <li>
-            <i class="fa-solid fa-list-ul fa-xm" style="color: #ffffff"></i>
-          </li>
-          <li>
-            <i class="fa-solid fa-desktop fa-xm" style="color: #ffffff"></i>
-          </li>
-          <li>
-            <i class="fa-solid fa-volume-high fa-xm" style="color: #ffffff"></i>
-          </li>
-          <li class="bars">
-            <span id="percentuale"></span>
-          </li>
-        </ul>
+      <!-- # DESTRA - CONTROLLI AUDIO - -->
+      <div class="container" id="sound">
+        <i class="fa-solid fa-list-ul fa-xm" style="color: #ffffff"></i>
+        <i class="fa-solid fa-desktop fa-xm" style="color: #ffffff"></i>
+        <i class="fa-solid fa-volume-high fa-xm" style="color: #ffffff"></i>
+        <div class="bar-container">
+          <span class="bar-size">
+            <span class="bar-progress"></span>
+          </span>
+        </div>
       </div>
     </footer>
   </body>

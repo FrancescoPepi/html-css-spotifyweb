@@ -1,238 +1,198 @@
-/*********************/
-/*#      GENERIC     */
-/*********************/
+/*
+# ********************
+#      	GENERIC	     *
+# ********************
+*/
 
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
-body{
-	font-family: 'Montserrat', sans-serif;
-	font-weight: 600;
-	color:var(--color-primary;)
-	scroll-behavior: smooth;
+body {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  background-color: var(--color-bg-primary);
+  color: var(--color-text-primary);
+  scroll-behavior: smooth;
 }
-main {
+ul {
+  list-style: none;
+}
+li:nth-child(2) {
+  color: var(--color-text-secondary);
+}
+.container {
+  padding: var(--space-small);
+}
+
+/*
+# ********************
+#      	UTILITY	     *
+# ********************
+*/
+
+/*
+# ******************
+#      	ROOT	     *
+# ******************
+*/
+
+:root {
+  /* Testo - Colori */
+  --color-text-primary: #f6f6f6;
+  --color-text-secondary: #696969;
+  --color-bg-primary: #141922;
+  --color-bg-sidebar: #000000;
+  --color-bg-header: rgba(0, 0, 0, 0.4);
+
+  /* Spazzi... */
+  --space-big: 20px;
+  --space-small: 5px;
+
+  /* Grandezze */
+  --height-player: 100px;
+  --height-header: 100px;
+  --width-sidebar: 300px;
+}
+
+/*
+# ********************
+#      	SECTION	     *
+# ********************
+*/
+
+/* *MACRO-LAYOUT */
+
+/* ?      MAIN-LAYOUT     */
+#wrapper {
+  height: calc(100vh - var(--height-player));
   display: flex;
-  height: calc(100vh - 150px);
 }
-
-header + * {
-  margin-top: 100px;
-}
-
-/*********************/
-/*#      UTILITY     */
-/*********************/
-.box {
-  display: flex;
-  align-items: center;
-}
-
-.flex {
-  display: flex;
-  align-items: center;
-}
-
-.text-primary{
-	color: var(--color-primary);
-}
-
-.text-secondary{
-	color: var(--color-secondary);
-}
-
-/*********************/
-/*#      	ROOT	     */
-/*********************/
-:root{
-	--color-primary:#f6f6f6;
-	--color-secondary:#696969;
-	--space-big:20px;
-	--space-small:5px;
-}
-
-
-/*********************/
-/*#      SECTION     */
-/*********************/
-
-/* *LAYER */
-/* ?    SIDEBAR       */
-
-.sidebar-open {
-  width: 300px;
-  background-color: #000000;
-}
-
-.sidebar-close {
-  width: 50px;
-  background-color: #000000;
-	display: none;
-}
-
-/* ?    MAIN-CONTAINER       */
-
-.main-container {
-  width: calc(100% - 300px);
-  background-color: #141922;
-  padding: 10px;
-  overflow: auto;
-}
-
-/* ?    MAIN-BOX     */
-
-.main-box {
-  display: flex;
-  align-items: center;
-}
-
-/* ?    HEADER     */
-
-header {
-  width: calc(100% - 300px);
-  height: 100px;
-  background-color: rgba(0, 0, 0, 0.4);
-
-  position: fixed;
-	left: 300px;
-	right: 0;
-  top: 0;
-  z-index: 2;
-}
-
-/* ?    FOOTER       */
-footer {
+/* ?      FOOTER-LAYOUT     */
+#player {
   width: 100%;
-  height: 150px;
-  padding: 10px;
+  height: var(--height-player);
   background-color: #282828;
 
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
-footer#footer > .box:nth-child(2) {
+/* *FINE-LAYOUT */
+
+/* ?    SIDEBAR       */
+#sidebar {
+  width: var(--width-sidebar);
+  background-color: var(--color-bg-sidebar);
+}
+/* ?    MAIN-CONTENT       */
+#main-content {
+  width: calc(100% - var(--width-sidebar));
+  overflow-y: auto;
+}
+/* ?    HEADER     */
+#header {
+  position: sticky;
+  left: 0;
+  top: 0;
+  height: var(--height-header);
+  background-color: var(--color-bg-header);
+}
+/* ?    ALBUM     */
+#album {
+  padding: var(--space-big);
+}
+/* ?    FOOTER       */
+#player .container {
+  height: 100%;
+  /* width: calc(100% / 3); */
+  display: flex;
+  align-items: center;
+  flex-grow: 2;
+  gap: var(--space-small);
+}
+
+#player .container:nth-child(2) {
   flex-direction: column;
-  justify-content: space-evenly;
+  align-items: normal;
 }
 /* * left */
-#footer .box {
-  margin-right: 20px;
+#player .box-img {
+  max-width: 80px;
+  min-width: 60px;
 }
-
-#footer li {
-  color: white;
-  list-style: none;
-  white-space: nowrap;
-  margin: 0 var(--space-small);
-}
-
-#footer .box-img {
-  max-width: 100px;
-	min-width: 60px;
-}
-
-#footer img {
+#player img {
   width: 100%;
 }
 
+#info-player ul {
+  margin-right: 5%;
+  white-space: nowrap;
+}
 /* *center */
-#center li {
-	padding: 0 var(--space-big);
-}
-#footer span {
-  color: white;
-}
-.bars {
-	min-width: 80px;
-  width: 40vw;
-  height: 6px;
-  background-color: rgba(212, 212, 212, 0.445);
-  border-radius: 100px;
-  margin: 0 var(--space-big);
+.contoller-player {
+  height: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-big);
 }
 
-#percentuale {
+.bar-container {
+  flex-grow: 3;
+  min-width: 80px;
+}
+
+.bar-size {
+  display: block;
+  width: 100%;
+  height: 4px;
+  background-color: var(--color-text-secondary);
+  border-radius: 3px;
+}
+
+.bar-size > .bar-progress {
   display: block;
   width: 30%;
-  height: 100%;
-  background-color: rgb(212, 212, 212);
-  border-radius: 100px;
+  height: 4px;
+  background-color: var(--color-text-primary);
+  border-radius: 3px;
 }
-
 /* *right */
-
-li.bars {
-  width: 80px;
+#sound.container {
+  justify-content: flex-end;
 }
 
-/*********************/
-/*#       DEBUG      */
-/*********************/
+#sound .bar-container {
+  max-width: 100px;
+}
+
+/*
+# ******************
+#      	DEBUG	     *
+# ******************
+*/
 
 .debug * {
   border: 1px dashed rgb(255, 0, 0);
 }
-/* 
-.debug .main-container {
-  padding: 10px;
-  background-color: #dae8fc;
+
+/*
+# ************************
+#      	MEDIA QUERY	     *
+# ************************
+*/
+
+/* !    TABLET      */
+
+@media screen and (max-width: 768px) {
 }
 
-.debug header {
-  padding: 10px;
-  background-color: #fce9da;
-}
-
-.debug .main-box {
-  padding: 10px;
-  background-color: #daddfc;
-}
-
-.debug .sidebar {
-  padding: 10px;
-  background-color: #fff2cc;
-}
-footer.debug {
-  padding: 10px;
-  background-color: #d5e8d4;
-} */
-
-/* .main-box {
-  min-height: 50px;
-  aspect-ratio: 1;
-} */
-
-/***************************/
-/*#       MEDIA QUERY      */
-/***************************/
-@media screen and (max-width: 1200px) {
-	li.bars {
-		display: none;
-	}
-#footer .box{
-	margin-right: 0px;
-}
-#footer li{
-	padding: 0 var(--space-small);
-}
-
-}
-
+/* !    FOOTER       */
 
 @media screen and (max-width: 576px) {
-	.main-container{
-		width: calc(100% - 50px);
-	}
-	.sidebar-open{
-		display: none;
-	}
-	.sidebar-close{
-		display: block;
-	}
-	header{
-		left: 50px;
-	}
-
+  :root {
+    --width-sidebar: 50px;
+  }
 }
