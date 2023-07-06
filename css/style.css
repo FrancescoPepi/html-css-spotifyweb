@@ -22,16 +22,22 @@ ul {
 li:nth-child(2) {
   color: var(--color-text-secondary);
 }
-.container {
-  padding: var(--space-small);
-}
 
 /*
 # ********************
 #      	UTILITY	     *
 # ********************
 */
-
+.container {
+  padding: var(--space-margin);
+}
+.row {
+  margin-left: -var(--space-margin);
+  margin-right: -var(--space-margin);
+}
+.col {
+  padding: var(--space-margin);
+}
 /*
 # ******************
 #      	ROOT	     *
@@ -49,6 +55,7 @@ li:nth-child(2) {
   /* Spazzi... */
   --space-big: 20px;
   --space-small: 5px;
+  --space-margin: 20px;
 
   /* Grandezze */
   --height-player: 100px;
@@ -82,10 +89,84 @@ li:nth-child(2) {
 /* *FINE-LAYOUT */
 
 /* ?    SIDEBAR       */
+
 #sidebar {
   width: var(--width-sidebar);
   background-color: var(--color-bg-sidebar);
+  padding: var(--space-big);
+  padding-bottom: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-big);
 }
+
+/* *LOGO - (SIDEBAR) */
+#sidebar img {
+  width: 50%;
+}
+#sidebar .logo-big {
+  display: block;
+}
+
+#sidebar .logo-small {
+  display: none;
+}
+
+/* *SECTION -_HOME,CERCA,LIBRERIA_- (SIDEBAR) */
+#sidebar .icon-img,
+#sidebar .icon-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--space-small);
+  color: var(--color-text-secondary);
+}
+
+#sidebar .icon-img > img {
+  width: 20px;
+}
+
+#sidebar .icon {
+  display: flex;
+  gap: var(--space-small);
+}
+
+/* *PLAYLIST - (SIDEBAR) */
+
+#new-playlist {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-big);
+  color: var(--color-text-secondary);
+  overflow-y: auto;
+}
+
+/* *PROFILO - DOWNLOAD APP - (SIDEBAR) */
+#sidebar .profile-download {
+  margin-top: auto;
+}
+
+#bar {
+  display: block;
+  margin: calc(2px + var(--space-small)) 0;
+  border: 1px solid var(--color-text-secondary);
+}
+
+#profilo .icon-img {
+  width: 30px;
+  aspect-ratio: 1/1;
+  border-radius: 25px;
+  background-color: var(--color-text-secondary);
+  overflow: hidden;
+  margin-bottom: var(--space-small);
+}
+
+#sidebar #profilo img {
+  width: 30px;
+  transform: translate(0, 3px);
+}
+
 /* ?    MAIN-CONTENT       */
 #main-content {
   width: calc(100% - var(--width-sidebar));
@@ -104,6 +185,9 @@ li:nth-child(2) {
   padding: var(--space-big);
 }
 /* ?    FOOTER       */
+#player .container {
+  padding: var(--space-small);
+}
 #player .container {
   height: 100%;
   /* width: calc(100% / 3); */
@@ -194,5 +278,39 @@ li:nth-child(2) {
 @media screen and (max-width: 576px) {
   :root {
     --width-sidebar: 50px;
+  }
+  #sidebar {
+    padding: 0;
+    align-items: center;
+    gap: var(--space-small);
+  }
+  #sidebar .icon {
+    justify-content: center;
+  }
+  #sidebar .logo-big {
+    display: none;
+  }
+  #sidebar .logo-small {
+    display: block;
+  }
+
+  #sidebar img {
+    width: 70%;
+    padding-top: 10px;
+  }
+  #sidebar .icon-text {
+    display: none;
+  }
+  #sidebar .icon img {
+    width: 25px;
+  }
+  #playlist {
+    display: none;
+  }
+  #sidebar .icon#download img {
+    width: 20px;
+  }
+  #sidebar #profilo img {
+    transform: translate(0, -1px);
   }
 }
