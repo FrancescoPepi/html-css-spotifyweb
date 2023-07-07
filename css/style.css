@@ -220,7 +220,7 @@ a {
 
 .up-grade {
   position: absolute;
-  right: 10px;
+  right: 40px;
   top: calc(100% / 2);
   transform: translate(0, -50%);
   padding: 10px 30px;
