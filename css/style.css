@@ -124,7 +124,8 @@ a {
 
 /* *LOGO - (SIDEBAR) */
 #sidebar img {
-  width: 50%;
+  width: 65%;
+  margin-bottom: var(--space-small);
 }
 #sidebar .logo-big {
   display: block;
@@ -159,6 +160,10 @@ a {
 
 /* *PLAYLIST - (SIDEBAR) */
 
+#playlist h4 {
+  margin-bottom: var(--space-small);
+}
+
 #new-playlist {
   display: flex;
   flex-direction: column;
@@ -190,7 +195,7 @@ a {
 
 #sidebar #profilo img {
   width: 30px;
-  transform: translate(0, 3px);
+  padding-top: 10px;
 }
 
 #sidebar #profilo .icon-text > a {
@@ -231,8 +236,12 @@ a {
   margin: 5px 0;
 }
 
+#album h5 {
+  color: var(--color-text-secondary);
+}
 #album nav {
-  height: 70px;
+  line-height: 50px;
+  font-size: 15px;
   text-align: center;
 }
 #album .album-card-section {
@@ -315,6 +324,10 @@ a {
 
 #sound .bar-container {
   max-width: 100px;
+}
+
+#sound .hamburger-audio {
+  display: none;
 }
 
 /*
@@ -400,5 +413,22 @@ a {
   }
   #album .album-card-section {
     max-width: inherit;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  #player #sound:not(.hamburger-audio) * {
+    display: none;
+  }
+  #player #sound .hamburger-audio {
+    display: block;
+    margin-right: 20px;
+  }
+
+  #info-player ul {
+    display: none;
+  }
+  html {
+    position: fixed;
   }
 }
